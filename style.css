@@ -1,184 +1,211 @@
+/* Base Setup */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 body {
-    background-color: #f5f0ff;
-    font-family: 'Segoe UI', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+  background-color: #f5f0ff;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
+/* Card Container */
 .card-container {
-    display: flex;
-    gap: 40px;
-    padding: 40px;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: transparent;
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: transparent;
 }
 
+/* Profile Card */
 .profile-card {
-    display: flex;
-   background: rgb(8, 0, 0)
-    border-radius: 30px;
-    overflow: hidden;
-    border: 15px solid #a855f7;
-    transition: border 0.3s ease, border-color 0.3s ease, border-image 0.3s ease;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    width: 100%;
+  display: flex;
+  flex: 1 1 300px;
+  max-width: 600px;
+  width: 100%;
+  background: #faf8f8;
+  border-radius: 30px;
+  overflow: hidden;
+  border: 15px solid #a855f7;
+  transition: border 0.3s ease, border-color 0.3s ease, border-image 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* Hover Gradient Effect */
 .profile-card:hover {
-    border: 15px solid transparent;
-    border-image-source: linear-gradient(to right, #a855f7, #ec4899, #a855f7);
-    border-image-slice: 1;
-    border-image-width: 15px;
-    border-image-repeat: round;
-    animation: slideGradient 3s linear infinite;
+  border: 15px solid transparent;
+  border-image-source: linear-gradient(to right, #a855f7, #ec4899, #a855f7);
+  border-image-slice: 1;
+  border-image-width: 15px;
+  border-image-repeat: round;
+  animation: slideGradient 3s linear infinite;
 }
 
+/* Profile Image Section */
 .profile-image {
-    border-right: 10px solid #a855f7;
-    padding-right: 20px;
-    margin-right: 20px;
-    box-sizing: content-box;
-    transition: border-color 0.3s ease;
+  border-right: 10px solid #a855f7;
+  padding-right: 20px;
+  margin-right: 20px;
+  transition: border-color 0.3s ease;
 }
 
 .profile-card:hover .profile-image {
-    border-right-color: #ec4899; /* Matches the prominent hover color */
+  border-right-color: #ec4899;
 }
 
 .profile-image img {
-    width: 220px;
-    height: 100%;
-    object-fit: cover;
+  width: 220px;
+  height: 100%;
+  object-fit: cover;
 }
 
+/* Profile Info Section */
 .profile-info {
-    padding: 25px;
-    background-color: #fff;
-    flex-grow: 1;
+  padding: 25px;
+  background-color: #fff;
+  flex-grow: 1;
 }
 
 .profile-info h2 {
-    color: #6b21a8;
-    margin-bottom: 15px;
+  color: #6b21a8;
+  margin-bottom: 15px;
 }
 
 .profile-info p {
-    font-size: 16px;
-    margin: 10px 0;
+  font-size: 16px;
+  margin: 10px 0;
 }
 
 .icon {
-    margin-right: 8px;
-    font-size: 18px;
+  margin-right: 8px;
+  font-size: 18px;
 }
 
 .color-line {
-    height: 4px;
-    width: 100%;
-    margin-top: 20px;
-    background: linear-gradient(to right, #3b82f6, #ef4444, #6366f1, #a855f7);
-    border-radius: 3px;
+  height: 4px;
+  width: 100%;
+  margin-top: 20px;
+  background: linear-gradient(to right, #3b82f6, #ef4444, #6366f1, #a855f7);
+  border-radius: 3px;
 }
 
+/* Gradient Animation */
 @keyframes slideGradient {
-    0% {
-        border-image-source: linear-gradient(to right, #a855f7, #ec4899, #a855f7);
-    }
-    50% {
-        border-image-source: linear-gradient(to right, #ec4899, #a855f7, #ec4899);
-    }
-    100% {
-        border-image-source: linear-gradient(to right, #a855f7, #ec4899, #a855f7);
-    }
-}@media (max-width: 768px) {
-    .card-container {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
-        gap: 15px;
-    }
-
-    .profile-card {
-        max-width: 100%;
-        border-width: 10px;
-        border-radius: 20px;
-    }
-
-    .profile-card:hover::before,
-    .profile-card:active::before {
-        top: -10px;
-        left: -10px;
-        right: -10px;
-        bottom: -10px;
-        border-width: 10px;
-        border-radius: 20px;
-    }
-
-    .profile-image {
-        border-right-width: 8px;
-        padding-right: 10px;
-        margin-right: 10px;
-    }
-
-    .profile-image img {
-        width: 120px;
-    }
-
-    .profile-info {
-        padding: 10px;
-    }
-
-    .profile-info h2 {
-        font-size: 1.2rem;
-    }
-
-    .profile-info p {
-        font-size: 12px;
-    }
-
-    .icon {
-        font-size: 14px;
-    }
-
-    .color-line {
-        height: 2px;
-        margin-top: 10px;
-    }
+  0% {
+    border-image-source: linear-gradient(to right, #a855f7, #ec4899, #a855f7);
+  }
+  50% {
+    border-image-source: linear-gradient(to right, #ec4899, #a855f7, #ec4899);
+  }
+  100% {
+    border-image-source: linear-gradient(to right, #a855f7, #ec4899, #a855f7);
+  }
 }
 
+/* Tablet - 768px */
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .profile-card {
+    flex-direction: row;
+    border-width: 10px;
+    border-radius: 20px;
+  }
+
+  .profile-image {
+    border-right-width: 8px;
+    padding-right: 10px;
+    margin-right: 10px;
+  }
+
+  .profile-image img {
+    width: 140px;
+  }
+
+  .profile-info {
+    padding: 15px;
+  }
+
+  .profile-info h2 {
+    font-size: 1.2rem;
+  }
+
+  .profile-info p {
+    font-size: 14px;
+  }
+
+  .icon {
+    font-size: 16px;
+  }
+
+  .color-line {
+    height: 3px;
+    margin-top: 12px;
+  }
+}
+
+/* Mobile - 480px */
 @media (max-width: 480px) {
-    .profile-card {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+  .profile-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 15px;
+  }
 
-    .profile-image {
-        border-right: none;
-        border-bottom: 8px solid #a855f7;
-        padding-right: 0;
-        margin-right: 0;
-        padding-bottom: 10px;
-        margin-bottom: 10px;
-    }
+  .profile-image {
+    border-right: none;
+    border-bottom: 8px solid #a855f7;
+    padding: 0 0 10px 0;
+    margin: 0 0 10px 0;
+  }
 
-    .profile-card:hover .profile-image,
-    .profile-card:active .profile-image {
-        border-bottom-color: #ec4899;
-    }
+  .profile-card:hover .profile-image {
+    border-bottom-color: #ec4899;
+  }
 
-    .profile-image img {
-        width: 100%;
-        max-width: 200px;
-        height: auto;
-    }
+  .profile-image img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+  }
 
-    .profile-info {
-        padding: 10px;
-    }
+  .profile-info {
+    padding: 12px;
+  }
+
+  .profile-info h2 {
+    font-size: 1.1rem;
+  }
+
+  .profile-info p {
+    font-size: 12px;
+  }
+
+  .icon {
+    font-size: 14px;
+  }
+
+  .color-line {
+    height: 2px;
+    margin-top: 10px;
+  }
 }
