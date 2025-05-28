@@ -47,8 +47,8 @@ body {
     bottom: -15px;
     border: 15px solid transparent;
     border-radius: 30px;
-    background: linear-gradient(to right, #a855f7, #ec4899, #a855f7) border-box;
-    animation: slideGradient 3s linear infinite;
+    background: linear-gradient(to right, #a855f7, #ec4899, #ff0000, #00ff00, #0000ff, #a855f7) border-box;
+    animation: slideGradient 4s linear infinite;
     z-index: -1;
 }
 
@@ -103,13 +103,13 @@ body {
 
 @keyframes slideGradient {
     0% {
-        background: linear-gradient(to right, #a855f7, #ec4899, #a855f7);
+        background: linear-gradient(to right, #a855f7, #ec4899, #ff0000, #00ff00, #0000ff, #a855f7);
     }
     50% {
-        background: linear-gradient(to right, #ec4899, #a855f7, #ec4899);
+        background: linear-gradient(to right, #0000ff, #a855f7, #ec4899, #ff0000, #00ff00, #0000ff);
     }
     100% {
-        background: linear-gradient(to right, #a855f7, #ec4899, #a855f7);
+        background: linear-gradient(to right, #a855f7, #ec4899, #ff0000, #00ff00, #0000ff, #a855f7);
     }
 }
 
